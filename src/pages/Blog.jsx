@@ -1,5 +1,10 @@
 import { motion } from "motion/react";
-import { staggerContainer, staggerItem, textReveal, slideUp } from "../animations/variants";
+import {
+  staggerContainer,
+  staggerItem,
+  textReveal,
+  slideUp,
+} from "../animations/variants";
 import AnimatedSection from "../components/AnimatedSection";
 
 function Blog() {
@@ -1918,7 +1923,12 @@ function Blog() {
           <motion.h1
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.6, type: "spring", stiffness: 200 }}
+            transition={{
+              delay: 0.2,
+              duration: 0.6,
+              type: "spring",
+              stiffness: 200,
+            }}
           >
             📝 Travel Blog
           </motion.h1>
@@ -1972,169 +1982,270 @@ function Blog() {
                     cursor: "pointer",
                   }}
                 >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "start",
-                    marginBottom: "1rem",
-                    flexWrap: "wrap",
-                    gap: "1rem",
-                  }}
-                >
-                  <div style={{ flex: 1 }}>
-                    <span
-                      style={{
-                        background: "#667eea",
-                        color: "white",
-                        padding: "0.25rem 0.75rem",
-                        borderRadius: "20px",
-                        fontSize: "0.875rem",
-                        fontWeight: "600",
-                        marginRight: "1rem",
-                      }}
-                    >
-                      {post.category}
-                    </span>
-                    <h3
-                      style={{
-                        color: "#333",
-                        marginTop: "0.5rem",
-                        fontSize: "1.5rem",
-                      }}
-                    >
-                      {post.title}
-                    </h3>
-                    <p
-                      style={{
-                        color: "#667eea",
-                        fontWeight: "600",
-                        marginTop: "0.5rem",
-                        fontSize: "0.9rem",
-                      }}
-                    >
-                      📍 {post.location}
-                    </p>
-                  </div>
-                </div>
-                <p
-                  style={{
-                    color: "#666",
-                    lineHeight: "1.6",
-                    marginBottom: "1rem",
-                  }}
-                >
-                  {post.excerpt}
-                </p>
-                {post.content && (
                   <div
                     style={{
-                      marginTop: "1.5rem",
-                      padding: "1.5rem",
-                      background: "white",
-                      borderRadius: "10px",
-                      border: "1px solid #e9ecef",
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "start",
+                      marginBottom: "1rem",
+                      flexWrap: "wrap",
+                      gap: "1rem",
                     }}
                   >
-                    <h4
+                    <div style={{ flex: 1 }}>
+                      <span
+                        style={{
+                          background: "#667eea",
+                          color: "white",
+                          padding: "0.25rem 0.75rem",
+                          borderRadius: "20px",
+                          fontSize: "0.875rem",
+                          fontWeight: "600",
+                          marginRight: "1rem",
+                        }}
+                      >
+                        {post.category}
+                      </span>
+                      <h3
+                        style={{
+                          color: "#333",
+                          marginTop: "0.5rem",
+                          fontSize: "1.5rem",
+                        }}
+                      >
+                        {post.title}
+                      </h3>
+                      <p
+                        style={{
+                          color: "#667eea",
+                          fontWeight: "600",
+                          marginTop: "0.5rem",
+                          fontSize: "0.9rem",
+                        }}
+                      >
+                        📍 {post.location}
+                      </p>
+                    </div>
+                  </div>
+                  <p
+                    style={{
+                      color: "#666",
+                      lineHeight: "1.6",
+                      marginBottom: "1rem",
+                    }}
+                  >
+                    {post.excerpt}
+                  </p>
+                  {post.content && (
+                    <div
                       style={{
-                        color: "#333",
-                        marginBottom: "1rem",
-                        fontSize: "1.2rem",
+                        marginTop: "1.5rem",
+                        padding: "1.5rem",
+                        background: "white",
+                        borderRadius: "10px",
+                        border: "1px solid #e9ecef",
                       }}
                     >
-                      Complete Travel Guide
-                    </h4>
+                      <h4
+                        style={{
+                          color: "#333",
+                          marginBottom: "1rem",
+                          fontSize: "1.2rem",
+                        }}
+                      >
+                        Complete Travel Guide
+                      </h4>
 
-                    {post.content.introduction && (
-                      <div style={{ marginBottom: "1.5rem" }}>
-                        <h5
-                          style={{
-                            color: "#667eea",
-                            marginBottom: "0.5rem",
-                            fontSize: "1rem",
-                          }}
-                        >
-                          Introduction
-                        </h5>
-                        <p style={{ color: "#555", lineHeight: "1.7" }}>
-                          {post.content.introduction}
-                        </p>
-                      </div>
-                    )}
-
-                    {post.content.whyVisit && (
-                      <div style={{ marginBottom: "1.5rem" }}>
-                        <h5
-                          style={{
-                            color: "#667eea",
-                            marginBottom: "0.5rem",
-                            fontSize: "1rem",
-                          }}
-                        >
-                          Why Visit
-                        </h5>
-                        <p style={{ color: "#555", lineHeight: "1.7" }}>
-                          {post.content.whyVisit}
-                        </p>
-                      </div>
-                    )}
-
-                    {post.content.attractions &&
-                      post.content.attractions.length > 0 && (
+                      {post.content.introduction && (
                         <div style={{ marginBottom: "1.5rem" }}>
                           <h5
                             style={{
                               color: "#667eea",
-                              marginBottom: "0.75rem",
+                              marginBottom: "0.5rem",
                               fontSize: "1rem",
                             }}
                           >
-                            Top Attractions
+                            Introduction
                           </h5>
-                          <div
-                            style={{
-                              display: "flex",
-                              flexDirection: "column",
-                              gap: "0.75rem",
-                            }}
-                          >
-                            {post.content.attractions.map((attraction, idx) => (
-                              <div
-                                key={idx}
-                                style={{
-                                  padding: "0.75rem",
-                                  background: "#f8f9fa",
-                                  borderRadius: "8px",
-                                }}
-                              >
-                                <strong
-                                  style={{
-                                    color: "#333",
-                                    display: "block",
-                                    marginBottom: "0.25rem",
-                                  }}
-                                >
-                                  {attraction.name}
-                                </strong>
-                                <p
-                                  style={{
-                                    color: "#666",
-                                    fontSize: "0.9rem",
-                                    margin: 0,
-                                    lineHeight: "1.6",
-                                  }}
-                                >
-                                  {attraction.description}
-                                </p>
-                              </div>
-                            ))}
-                          </div>
+                          <p style={{ color: "#555", lineHeight: "1.7" }}>
+                            {post.content.introduction}
+                          </p>
                         </div>
                       )}
 
-                    {post.content.activities &&
-                      post.content.activities.length > 0 && (
+                      {post.content.whyVisit && (
+                        <div style={{ marginBottom: "1.5rem" }}>
+                          <h5
+                            style={{
+                              color: "#667eea",
+                              marginBottom: "0.5rem",
+                              fontSize: "1rem",
+                            }}
+                          >
+                            Why Visit
+                          </h5>
+                          <p style={{ color: "#555", lineHeight: "1.7" }}>
+                            {post.content.whyVisit}
+                          </p>
+                        </div>
+                      )}
+
+                      {post.content.attractions &&
+                        post.content.attractions.length > 0 && (
+                          <div style={{ marginBottom: "1.5rem" }}>
+                            <h5
+                              style={{
+                                color: "#667eea",
+                                marginBottom: "0.75rem",
+                                fontSize: "1rem",
+                              }}
+                            >
+                              Top Attractions
+                            </h5>
+                            <div
+                              style={{
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: "0.75rem",
+                              }}
+                            >
+                              {post.content.attractions.map(
+                                (attraction, idx) => (
+                                  <div
+                                    key={idx}
+                                    style={{
+                                      padding: "0.75rem",
+                                      background: "#f8f9fa",
+                                      borderRadius: "8px",
+                                    }}
+                                  >
+                                    <strong
+                                      style={{
+                                        color: "#333",
+                                        display: "block",
+                                        marginBottom: "0.25rem",
+                                      }}
+                                    >
+                                      {attraction.name}
+                                    </strong>
+                                    <p
+                                      style={{
+                                        color: "#666",
+                                        fontSize: "0.9rem",
+                                        margin: 0,
+                                        lineHeight: "1.6",
+                                      }}
+                                    >
+                                      {attraction.description}
+                                    </p>
+                                  </div>
+                                ),
+                              )}
+                            </div>
+                          </div>
+                        )}
+
+                      {post.content.activities &&
+                        post.content.activities.length > 0 && (
+                          <div style={{ marginBottom: "1.5rem" }}>
+                            <h5
+                              style={{
+                                color: "#667eea",
+                                marginBottom: "0.75rem",
+                                fontSize: "1rem",
+                              }}
+                            >
+                              Activities & Experiences
+                            </h5>
+                            <ul
+                              style={{
+                                color: "#555",
+                                lineHeight: "1.8",
+                                paddingLeft: "1.5rem",
+                                margin: 0,
+                              }}
+                            >
+                              {post.content.activities.map((activity, idx) => (
+                                <li
+                                  key={idx}
+                                  style={{ marginBottom: "0.5rem" }}
+                                >
+                                  {activity}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+
+                      {post.content.bestTime && (
+                        <div style={{ marginBottom: "1.5rem" }}>
+                          <h5
+                            style={{
+                              color: "#667eea",
+                              marginBottom: "0.5rem",
+                              fontSize: "1rem",
+                            }}
+                          >
+                            Best Time to Visit
+                          </h5>
+                          <p style={{ color: "#555", lineHeight: "1.7" }}>
+                            {post.content.bestTime}
+                          </p>
+                        </div>
+                      )}
+
+                      {post.content.howToReach && (
+                        <div style={{ marginBottom: "1.5rem" }}>
+                          <h5
+                            style={{
+                              color: "#667eea",
+                              marginBottom: "0.5rem",
+                              fontSize: "1rem",
+                            }}
+                          >
+                            How to Reach
+                          </h5>
+                          <p style={{ color: "#555", lineHeight: "1.7" }}>
+                            {post.content.howToReach}
+                          </p>
+                        </div>
+                      )}
+
+                      {post.content.accommodation && (
+                        <div style={{ marginBottom: "1.5rem" }}>
+                          <h5
+                            style={{
+                              color: "#667eea",
+                              marginBottom: "0.5rem",
+                              fontSize: "1rem",
+                            }}
+                          >
+                            Accommodation
+                          </h5>
+                          <p style={{ color: "#555", lineHeight: "1.7" }}>
+                            {post.content.accommodation}
+                          </p>
+                        </div>
+                      )}
+
+                      {post.content.food && (
+                        <div style={{ marginBottom: "1.5rem" }}>
+                          <h5
+                            style={{
+                              color: "#667eea",
+                              marginBottom: "0.5rem",
+                              fontSize: "1rem",
+                            }}
+                          >
+                            Food & Cuisine
+                          </h5>
+                          <p style={{ color: "#555", lineHeight: "1.7" }}>
+                            {post.content.food}
+                          </p>
+                        </div>
+                      )}
+
+                      {post.content.tips && post.content.tips.length > 0 && (
                         <div style={{ marginBottom: "1.5rem" }}>
                           <h5
                             style={{
@@ -2143,7 +2254,7 @@ function Blog() {
                               fontSize: "1rem",
                             }}
                           >
-                            Activities & Experiences
+                            Travel Tips
                           </h5>
                           <ul
                             style={{
@@ -2153,201 +2264,105 @@ function Blog() {
                               margin: 0,
                             }}
                           >
-                            {post.content.activities.map((activity, idx) => (
+                            {post.content.tips.map((tip, idx) => (
                               <li key={idx} style={{ marginBottom: "0.5rem" }}>
-                                {activity}
+                                {tip}
                               </li>
                             ))}
                           </ul>
                         </div>
                       )}
 
-                    {post.content.bestTime && (
-                      <div style={{ marginBottom: "1.5rem" }}>
-                        <h5
-                          style={{
-                            color: "#667eea",
-                            marginBottom: "0.5rem",
-                            fontSize: "1rem",
-                          }}
-                        >
-                          Best Time to Visit
-                        </h5>
-                        <p style={{ color: "#555", lineHeight: "1.7" }}>
-                          {post.content.bestTime}
-                        </p>
-                      </div>
-                    )}
+                      {post.content.budget && (
+                        <div style={{ marginBottom: "1.5rem" }}>
+                          <h5
+                            style={{
+                              color: "#667eea",
+                              marginBottom: "0.5rem",
+                              fontSize: "1rem",
+                            }}
+                          >
+                            Budget Estimate
+                          </h5>
+                          <p style={{ color: "#555", lineHeight: "1.7" }}>
+                            {post.content.budget}
+                          </p>
+                        </div>
+                      )}
 
-                    {post.content.howToReach && (
-                      <div style={{ marginBottom: "1.5rem" }}>
-                        <h5
-                          style={{
-                            color: "#667eea",
-                            marginBottom: "0.5rem",
-                            fontSize: "1rem",
-                          }}
-                        >
-                          How to Reach
-                        </h5>
-                        <p style={{ color: "#555", lineHeight: "1.7" }}>
-                          {post.content.howToReach}
-                        </p>
-                      </div>
-                    )}
-
-                    {post.content.accommodation && (
-                      <div style={{ marginBottom: "1.5rem" }}>
-                        <h5
-                          style={{
-                            color: "#667eea",
-                            marginBottom: "0.5rem",
-                            fontSize: "1rem",
-                          }}
-                        >
-                          Accommodation
-                        </h5>
-                        <p style={{ color: "#555", lineHeight: "1.7" }}>
-                          {post.content.accommodation}
-                        </p>
-                      </div>
-                    )}
-
-                    {post.content.food && (
-                      <div style={{ marginBottom: "1.5rem" }}>
-                        <h5
-                          style={{
-                            color: "#667eea",
-                            marginBottom: "0.5rem",
-                            fontSize: "1rem",
-                          }}
-                        >
-                          Food & Cuisine
-                        </h5>
-                        <p style={{ color: "#555", lineHeight: "1.7" }}>
-                          {post.content.food}
-                        </p>
-                      </div>
-                    )}
-
-                    {post.content.tips && post.content.tips.length > 0 && (
-                      <div style={{ marginBottom: "1.5rem" }}>
-                        <h5
-                          style={{
-                            color: "#667eea",
-                            marginBottom: "0.75rem",
-                            fontSize: "1rem",
-                          }}
-                        >
-                          Travel Tips
-                        </h5>
-                        <ul
-                          style={{
-                            color: "#555",
-                            lineHeight: "1.8",
-                            paddingLeft: "1.5rem",
-                            margin: 0,
-                          }}
-                        >
-                          {post.content.tips.map((tip, idx) => (
-                            <li key={idx} style={{ marginBottom: "0.5rem" }}>
-                              {tip}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {post.content.budget && (
-                      <div style={{ marginBottom: "1.5rem" }}>
-                        <h5
-                          style={{
-                            color: "#667eea",
-                            marginBottom: "0.5rem",
-                            fontSize: "1rem",
-                          }}
-                        >
-                          Budget Estimate
-                        </h5>
-                        <p style={{ color: "#555", lineHeight: "1.7" }}>
-                          {post.content.budget}
-                        </p>
-                      </div>
-                    )}
-
-                    {post.content.nearbyPlaces && (
-                      <div style={{ marginBottom: "1rem" }}>
-                        <h5
-                          style={{
-                            color: "#667eea",
-                            marginBottom: "0.5rem",
-                            fontSize: "1rem",
-                          }}
-                        >
-                          Nearby Places
-                        </h5>
-                        <p style={{ color: "#555", lineHeight: "1.7" }}>
-                          {post.content.nearbyPlaces}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                )}
-                {post.highlights && (
-                  <div
-                    style={{
-                      marginBottom: "1rem",
-                      padding: "1rem",
-                      background: "white",
-                      borderRadius: "8px",
-                    }}
-                  >
-                    <strong style={{ color: "#333", fontSize: "0.9rem" }}>
-                      Must Visit:
-                    </strong>
+                      {post.content.nearbyPlaces && (
+                        <div style={{ marginBottom: "1rem" }}>
+                          <h5
+                            style={{
+                              color: "#667eea",
+                              marginBottom: "0.5rem",
+                              fontSize: "1rem",
+                            }}
+                          >
+                            Nearby Places
+                          </h5>
+                          <p style={{ color: "#555", lineHeight: "1.7" }}>
+                            {post.content.nearbyPlaces}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                  {post.highlights && (
                     <div
                       style={{
-                        display: "flex",
-                        flexWrap: "wrap",
-                        gap: "0.5rem",
-                        marginTop: "0.5rem",
+                        marginBottom: "1rem",
+                        padding: "1rem",
+                        background: "white",
+                        borderRadius: "8px",
                       }}
                     >
-                      {post.highlights.map((highlight, idx) => (
-                        <span
-                          key={idx}
-                          style={{
-                            background: "#e9ecef",
-                            color: "#495057",
-                            padding: "0.25rem 0.75rem",
-                            borderRadius: "15px",
-                            fontSize: "0.8rem",
-                          }}
-                        >
-                          {highlight}
-                        </span>
-                      ))}
+                      <strong style={{ color: "#333", fontSize: "0.9rem" }}>
+                        Must Visit:
+                      </strong>
+                      <div
+                        style={{
+                          display: "flex",
+                          flexWrap: "wrap",
+                          gap: "0.5rem",
+                          marginTop: "0.5rem",
+                        }}
+                      >
+                        {post.highlights.map((highlight, idx) => (
+                          <span
+                            key={idx}
+                            style={{
+                              background: "#e9ecef",
+                              color: "#495057",
+                              padding: "0.25rem 0.75rem",
+                              borderRadius: "15px",
+                              fontSize: "0.8rem",
+                            }}
+                          >
+                            {highlight}
+                          </span>
+                        ))}
+                      </div>
                     </div>
+                  )}
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: "1rem",
+                      fontSize: "0.875rem",
+                      color: "#999",
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    <span>📅 {post.date}</span>
+                    <span>✍️ {post.author}</span>
+                    <span>⏱️ {post.readTime}</span>
                   </div>
-                )}
-                <div
-                  style={{
-                    display: "flex",
-                    gap: "1rem",
-                    fontSize: "0.875rem",
-                    color: "#999",
-                    flexWrap: "wrap",
-                  }}
-                >
-                  <span>📅 {post.date}</span>
-                  <span>✍️ {post.author}</span>
-                  <span>⏱️ {post.readTime}</span>
-                </div>
-              </article>
-            ))}
+                </motion.article>
+              ))}
+            </motion.div>
           </div>
-        </div>
-      </div>
+        </AnimatedSection>
       </div>
     </section>
   );
