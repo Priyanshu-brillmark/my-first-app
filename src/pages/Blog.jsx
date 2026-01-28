@@ -2348,6 +2348,7 @@ function Blog() {
           </div>
         </div>
       </div>
+      </div>
     </section>
   );
 }
